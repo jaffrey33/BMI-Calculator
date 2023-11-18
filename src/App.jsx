@@ -1,16 +1,19 @@
 import { useEffect, useState } from "react"
 import './style.css'
+
 export default function App(){
-  const [weight,setWeight] = useState(0)
-  const [height,setHeight] = useState(0)
-  const [bmi,setBmi] = useState('')
+  const [weight,setWeight] = useState(60)
+  const [height,setHeight] = useState(180)
+  const [bmi,setBmi] = useState(0)
   const [result,setResult] = useState('')
 
-  let calcBMI = (event) =>{
+
+  const calcBMI = (event) =>{
 
     event.preventDefault()
     let bmi = (weight / height/height)* 10000
     setBmi(bmi.toFixed(1))
+
     if (bmi <= 18.5){
       setResult('Under Weight')
     }
